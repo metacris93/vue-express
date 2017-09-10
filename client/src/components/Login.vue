@@ -24,7 +24,7 @@
               :type="see_password ? 'password' : 'text'"                
               required
             ></v-text-field>
-            <v-btn class="cyan white--text" @click="register">Register</v-btn><br>
+            <v-btn class="cyan white--text" @click="login">Login</v-btn><br>
           </v-form>  
           <div class="error" v-html="error"></div>   
         </div> 
@@ -50,9 +50,9 @@ export default {
     }
   },
   methods: {
-    async register () {
+    async login () {
       try {
-        await AuthenticationService.register({
+        await AuthenticationService.login({
           email: this.email,
           password: this.password
         })
